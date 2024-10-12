@@ -49,3 +49,11 @@ require("lazy").setup({ import = "custom/plugins" }, {
 		notify = false,
 	},
 })
+
+vim.api.nvim_create_autocmd("FocusLost", {
+	group = vim.api.nvim_create_augroup("FocusLostStuff", { clear = true }),
+	callback = function(ev)
+		vim.cmd.stopinsert()
+		vim.cmd.wall({ mods = { silent = true } })
+	end,
+})
