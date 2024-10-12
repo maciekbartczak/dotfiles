@@ -261,25 +261,25 @@ plugins {
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
-    gruvbox-light {
-        bg 213 196 161
-        fg 80 73 69
-        orange 152 0 5
-        green 121 116 14
-        yellow 215 153 33
-        blue 69 133 136
-        magenta 177 98 134
-        cyan 104 157 106
-        black 235 219 178
-        white 60 56 54
-        red 214 93 14
+    nord {
+        fg "#D8DEE9"
+        bg "#2E3440"
+        black "#3B4252"
+        red "#BF616A"
+        green "#A3BE8C"
+        yellow "#EBCB8B"
+        blue "#81A1C1"
+        magenta "#B48EAD"
+        cyan "#88C0D0"
+        white "#E5E9F0"
+        orange "#D08770"
     }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "gruvbox-light"
+theme "nord"
 
 // The name of the default layout to load on startup
 // Default: "default"
