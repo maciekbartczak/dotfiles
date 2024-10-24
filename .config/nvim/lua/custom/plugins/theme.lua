@@ -3,7 +3,7 @@ return {
 		"zaldih/themery.nvim",
 		init = function()
 			require("themery").setup({
-				themes = { "gruvbox", "gruber-darker" },
+				themes = { "gruvbox", "gruber-darker", "naysayer" },
 				livePreview = true,
 			})
 		end,
