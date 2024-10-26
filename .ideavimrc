@@ -1,4 +1,5 @@
-let mapleader = &quot; &quot;
+" Basic settings
+let mapleader = " "
 set scrolloff=5
 set incsearch
 set ignorecase
@@ -7,88 +8,92 @@ set wrapscan
 set clipboard=unnamedplus
 set relativenumber number
 set easymotion
-
-map Q gq
-
-&quot; load plugins
-Plug &#39;preservim/nerdtree&#39;
-Plug &#39;machakann/vim-highlightedyank&#39;
-Plug &#39;michaeljsmith/vim-indent-object&#39;
-Plug &#39;tpope/vim-surround&#39;
 set which-key
 set quickscope
 
-&quot; set the keybindings to move between splits to ctrl + hjkl
-sethandler &lt;c-h&gt; a:vim
-sethandler &lt;c-l&gt; a:vim
-sethandler &lt;c-j&gt; a:vim
-sethandler &lt;c-k&gt; a:vim
-nnoremap &lt;c-h&gt; &lt;c-w&gt;h
-nnoremap &lt;c-l&gt; &lt;c-w&gt;l
-nnoremap &lt;c-j&gt; &lt;c-w&gt;j
-nnoremap &lt;c-k&gt; &lt;c-w&gt;k
+" Basic mappings
+map Q gq
 
-nmap &lt;Tab&gt; &lt;Action&gt;(ShowErrorDescription)
-map &lt;Leader&gt;e &lt;Action&gt;(GotoNextError)
-nmap gs &lt;Action&gt;(GotoSuperMethod)
-nmap gu &lt;Action&gt;(ShowUsages)
-nmap gi &lt;Action&gt;(GotoImplementation)
-map &lt;Leader&gt;o &lt;Action&gt;(OverrideMethods)
-map &lt;Leader&gt;lf &lt;Action&gt;(SelectInProjectView)
+" Plugins
+set NERDTree
+set highlightedyank
+set vim-indent-object
+set surround
 
-&quot;keep visual mode after indent
-vnoremap &gt; &gt;gv
-vnoremap &lt; &lt;gv
+" Split navigation
+sethandler <c-h> a:vim
+sethandler <c-l> a:vim
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
 
-&quot; debugger bindings
-map &lt;Leader&gt;b &lt;Action&gt;(ToggleLineBreakpoint)
-map &lt;Leader&gt;d &lt;Action&gt;(DebugClass)
-map &lt;Leader&gt;dr &lt;Action&gt;(RerunFailedTests)
+" IDE actions
+nmap <Tab> <Action>(ShowErrorDescription)
+map <Leader>e <Action>(GotoNextError)
+nmap gs <Action>(GotoSuperMethod)
+nmap gu <Action>(ShowUsages)
+nmap gi <Action>(GotoImplementation)
+map <Leader>o <Action>(OverrideMethods)
+map <Leader>lf <Action>(SelectInProjectView)
 
-&quot; &#39;telescope&#39; bindings
-map &lt;Leader&gt;se &lt;Action&gt;(RecentFiles)
-map &lt;Leader&gt;sw &lt;Action&gt;(FindInPath)
-map &lt;Leader&gt;sf &lt;Action&gt;(GotoFile)
-map &lt;Leader&gt;sa &lt;Action&gt;(GotoAction)
-map &lt;Leader&gt;ss &lt;Action&gt;(GotoSymbol)
-map &lt;Leader&gt;sr &lt;Action&gt;(RunAnything)
-map &lt;Leader&gt;sc &lt;Action&gt;(FileStructurePopup)
+" Indentation
+vnoremap > >gv
+vnoremap < <gv
 
-&quot; refactoring bindings
-map &lt;Leader&gt;R &lt;Action&gt;(RenameElement)
-map &lt;Leader&gt;xm &lt;Action&gt;(ExtractMethod)
-map &lt;Leader&gt;xv &lt;Action&gt;(IntroduceVariable)
-map &lt;Leader&gt;xc &lt;Action&gt;(IntroduceConstant)
+" Debugger bindings
+map <Leader>b <Action>(ToggleLineBreakpoint)
+map <Leader>d <Action>(DebugClass)
+map <Leader>dr <Action>(RerunFailedTests)
 
-&quot; window bindings
-map &lt;Leader&gt;wd &lt;Action&gt;(ActivateDebugToolWindow)
-map &lt;Leader&gt;ww &lt;Action&gt;(HideAllWindows)
-map &lt;Leader&gt;wt &lt;Action&gt;(ActivateTerminalToolWindow)
-map &lt;Leader&gt;wf &lt;Action&gt;(ActivateProjectToolWindow)
+" Search and navigation
+map <Leader>se <Action>(RecentFiles)
+map <Leader>sw <Action>(FindInPath)
+map <Leader>sf <Action>(GotoFile)
+map <Leader>sa <Action>(GotoAction)
+map <Leader>ss <Action>(GotoSymbol)
+map <Leader>sr <Action>(RunAnything)
+map <Leader>sc <Action>(FileStructurePopup)
 
-map &lt;S-j&gt; &lt;Action&gt;(PreviousTab)
-map &lt;S-k&gt; &lt;Action&gt;(NextTab)
-map &lt;S-x&gt; &lt;Action&gt;(CloseContent)
-map &lt;C-S-x&gt; &lt;Action&gt;(CloseAllEditorsButActive)
+" Refactoring bindings
+map <Leader>R <Action>(RenameElement)
+map <Leader>xm <Action>(ExtractMethod)
+map <Leader>xv <Action>(IntroduceVariable)
+map <Leader>xc <Action>(IntroduceConstant)
 
-&quot; git bindings
-map &lt;Leader&gt;gu &lt;Action&gt;(Vcs.UpdateProject)
-map &lt;Leader&gt;gr &lt;Action&gt;(Vcs.RollbackChangedLines)
-map &lt;Leader&gt;gb &lt;Action&gt;(Git.Branches)
+" Window management
+map <Leader>wd <Action>(ActivateDebugToolWindow)
+map <Leader>ww <Action>(HideAllWindows)
+map <Leader>wt <Action>(ActivateTerminalToolWindow)
+map <Leader>wf <Action>(ActivateProjectToolWindow)
 
-&quot; maven bindings
-map &lt;Leader&gt;mr &lt;Action&gt;(Maven.Reimport)
+" Tab management
+map <S-j> <Action>(PreviousTab)
+map <S-k> <Action>(NextTab)
+map <S-x> <Action>(CloseContent)
+map <C-S-x> <Action>(CloseAllEditorsButActive)
 
-&quot; easymotion jumps
-map &lt;Leader&gt;j &lt;Plug&gt;(easymotion-f)
-map &lt;Leader&gt;J &lt;Plug&gt;(easymotion-s)
+" Git bindings
+map <Leader>gu <Action>(Vcs.UpdateProject)
+map <Leader>gr <Action>(Vcs.RollbackChangedLines)
+map <Leader>gb <Action>(Git.Branches)
 
-&quot; always use jetbrains jumplist
-nmap &lt;C-o&gt; &lt;Action&gt;(Forward)
-nmap &lt;C-i&gt; &lt;Action&gt;(Back)
+" Maven bindings
+map <Leader>mr <Action>(Maven.Reimport)
 
-&quot; Toggle case and start typing. E.g. `&lt;leader&gt;iget`: `property` -&gt; `getProperty`
-nmap &lt;leader&gt;i ~hi
+" EasyMotion
+map <Leader>j <Plug>(easymotion-f)
+map <Leader>J <Plug>(easymotion-s)
 
-nmap &lt;S-Down&gt; :action EditorCloneCaretBelow&lt;CR&gt;
-nmap &lt;S-Up&gt; :action EditorCloneCaretAbove&lt;CR&gt;
+" Navigation history
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+" Case toggle and insert
+nmap <leader>i ~hi
+
+" Multiple cursors
+nmap <S-Down> <Action>(EditorCloneCaretBelow)
+nmap <S-Up> <Action>(EditorCloneCaretAbove)
