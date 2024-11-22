@@ -88,8 +88,8 @@ map <Leader>j <Plug>(easymotion-f)
 map <Leader>J <Plug>(easymotion-s)
 
 " Navigation history
-nmap <C-o> <Action>(Back)
-nmap <C-i> <Action>(Forward)
+nmap <C-i> <Action>(Back)
+nmap <C-o> <Action>(Forward)
 
 " Case toggle and insert
 nmap <leader>i ~hi
