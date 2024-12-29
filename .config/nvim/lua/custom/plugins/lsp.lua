@@ -151,9 +151,9 @@ return {
 				html = {},
 				svelte = {},
 				ts_ls = {},
+				zls = {},
 				-- gopls = {},
 				-- pyright = {},
-				-- ts_ls = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
 				lua_ls = {
