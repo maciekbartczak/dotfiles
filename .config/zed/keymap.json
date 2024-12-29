@@ -13,7 +13,8 @@
       "space s s": "project_symbols::Toggle",
       "space s a": "command_palette::Toggle",
       "space l f": "pane::RevealInProjectPanel",
-      "space w w": "workspace::CloseAllDocks"
+      "space w w": "workspace::CloseAllDocks",
+      "alt-j": "vim::SelectNext"
     }
   },
   {
