@@ -7,22 +7,27 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
-  "ui_font_size": 16,
+  "ui_font_size": 18,
   "buffer_font_size": 18,
   "buffer_font_family": "Iosevka Nerd Font",
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Soft"
+    "dark": "Tokyo Night Storm"
   },
+  "icon_theme": "Catppuccin Frappé",
   "vim_mode": true,
   "autosave": "on_focus_change",
-  "tab_bar": { "show": false }
+  "tab_bar": { "show": false },
+  "max_tabs": 1
 }
